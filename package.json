@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon -x ts-node src/main.ts"
+    "start": "node dist/index.js",
+    "postinstall": "tsc",
+    "watch-node": "nodemon dist/index.js",
+    "watch-ts": "tsc -w",
+    "deploy": "git add . && git commit -m Heroku && git push heroku master"
   },
   "repository": {
     "type": "git",
@@ -32,6 +36,7 @@
     "@types/node": "^16.3.1",
     "nodemon": "^2.0.12"
   },
+  "engines": { "node": "14.17.5", "npm":"6.14.14" },
   "bugs": {
     "url": "https://github.com/rohit21oct85/ejam-backend/issues"
   },
