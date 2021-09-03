@@ -3,17 +3,22 @@ import mongoose, {Schema} from 'mongoose'
 import IDeployment from '../interfaces/deployment.interface'
 
 const DeploymentSchema: Schema = new Schema({
-      URL: {
+      url: {
             type: String,
             required: true
       },
-      templateName: {
+      name: {
             type: String,
             required: true
       },
-      version: {
-            type: String,
-            required: true
+      versions: {
+            "type": Array,
+            "minItems": 1,
+            "uniqueItems": true,
+            "required": true,
+            "items": {
+                  "type": "string"
+            },
       },
       deployed: {
             type: Date,
