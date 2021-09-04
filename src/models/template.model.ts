@@ -1,5 +1,7 @@
 
-import mongoose, {Schema} from 'mongoose'
+import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
+
 import ITemplate from '../interfaces/template.interface'
 
 const TemplateSchema: Schema = new Schema({

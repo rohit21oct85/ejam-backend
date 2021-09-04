@@ -1,4 +1,5 @@
-import {Date, Document} from 'mongoose'
+import * as mongoose from 'mongoose';
+import { Date, Document } from 'mongoose';
 
 export default interface ITemplate extends Document{
       name: String,

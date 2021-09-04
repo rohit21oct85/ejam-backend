@@ -1,5 +1,4 @@
 import {Request, Response} from 'express';
-import mongoose from 'mongoose'
 import Deployment from '../models/deployment.model'
 import * as Joi from 'joi';
 
@@ -22,7 +21,6 @@ const addDeployment = async (req: Request, resp: Response) => {
                   }) 
             } else { 
                   const deploymentData = new Deployment({
-                        _id: new mongoose.Types.ObjectId(),
                         template,
                         versions,
                         url

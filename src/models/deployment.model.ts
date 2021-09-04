@@ -1,5 +1,7 @@
 
-import mongoose, {Schema} from 'mongoose'
+import * as mongoose from 'mongoose';
+import { Schema } from 'mongoose';
+
 import IDeployment from '../interfaces/deployment.interface'
 
 const DeploymentSchema: Schema = new Schema({
