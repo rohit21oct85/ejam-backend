@@ -6,8 +6,6 @@
   "scripts": {
     "start": "nodemon -x ts-node src/main.ts",
     "start:prod": "ts-node src/main.ts",
-    "build": "tsc src/app.ts",
-    "postinstall": "npm run build",
     "deploy": "git push origin main"
   },
   "repository": {
