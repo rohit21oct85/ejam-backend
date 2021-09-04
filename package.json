@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start":"nodemon -x ts-node src/main.ts",
-    "start:production": "node -x ts-node src/main.ts",
+    "start:prod": "node build/index.js",
+    "build": "tsc",
+    "postinstall": "npm run build",
     "deploy": "git push origin main"
   },
   "repository": {
