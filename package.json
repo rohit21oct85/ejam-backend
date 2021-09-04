@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start":"nodemon -x ts-node src/main.ts",
-    "start:production": "node dist/index.js",
-    "watch-node": "nodemon dist/index.js",
-    "watch-ts": "tsc -w",
+    "start:production": "node -x ts-node src/main.ts",
     "deploy": "git push origin main"
   },
   "repository": {
