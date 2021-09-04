@@ -1,0 +1,13 @@
+
+### Add templates ### 
+POST http://localhost:3000/api/template/add/template
+Content-Type: application/json
+
+{
+      "name": "template 2",
+      "versions": "1.0.1"
+}
+
+### get templates ### 
+GET http://localhost:3000/api/template/get/templates/6132d5e8af2b0d2a0ac52fd3
+Content-Type: application/json

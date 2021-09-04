@@ -60,6 +60,10 @@ const getDeployments = async (req: Request, resp: Response) => {
 const deleteDeployments = async (req: Request, resp: Response) => {
       try {
             await Deployment.findByIdAndDelete(req?.body?.deployment_id);     
+            return resp.status(resp.statusCode).json({
+                  status: resp?.statusCode,
+                  message: "deployment Deleted"
+            })
       } catch (error) {
             return resp.status(resp.statusCode).json({
                   error: resp.statusCode,

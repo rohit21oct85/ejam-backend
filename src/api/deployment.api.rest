@@ -4,9 +4,9 @@ POST http://localhost:3000/api/deployment/add/deployment
 Content-Type: application/json
 
 {
-      "name": "test template 3",
-      "url": "https://ejam-backend-server.herokuapp.com/api/test3",
-      "versions": "1.0.3"
+      "name": "template 1",
+      "versions": "0.0.2",
+      "url": "https://ejam-backend-server.herokuapp.com/api/template/get/templates/6132d37daf2b0d2a0ac3e367"
 }
 
 ### get deployments ### 
@@ -19,5 +19,5 @@ DELETE http://localhost:3000/api/deployment/delete/deployments
 Content-Type: application/json
 
 {
-      "deployment_id": "61319d22ab6cf62d60949b3a"
+      "deployment_id": "6132d62d877cf637fcd73d39"
 }

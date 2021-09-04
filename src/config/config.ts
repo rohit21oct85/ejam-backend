@@ -4,6 +4,7 @@ dotenv.config();
 
 const MONGO_OPTIONS = {
       useUnifiedTopology: true,
+      useFindAndModify: true,
       useNewUrlParser: true,
       autoIndex: false,
       retryWrites: false

@@ -5,6 +5,7 @@ import config from './config/config'
 import mongoose from 'mongoose'
 
 import deployment from './routes/deployment.routes'
+import template from './routes/template.routes'
 
 const app = express();
 app.use(cors());
@@ -25,5 +26,6 @@ app.use(requestLoggerMiddleware)
 
 /** RoutesList */
 app.use('/api/deployment', deployment)
+app.use('/api/template', template)
 
 export { app };
