@@ -4,8 +4,8 @@ POST http://localhost:3000/api/template/add/template
 Content-Type: application/json
 
 {
-      "name": "template 2",
-      "versions": "1.0.1"
+      "name": "React Redux",
+      "versions": "16.0.1"
 }
 
 ### get templates ### 

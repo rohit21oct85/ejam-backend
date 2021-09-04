@@ -6,13 +6,13 @@ import * as Joi from 'joi';
 const addDeployment = async (req: Request, resp: Response) => {
       try {
             let deploymentSchema;
-            let {url, name, versions} = req.body;
+            let {template, versions, url} = req.body;
             deploymentSchema = Joi.object().keys({ 
-                  url: Joi.string().required(), 
-                  name: Joi.string().required(),
-                  versions: Joi.string().required() 
+                  template: Joi.string().required(),
+                  versions: Joi.string().required(), 
+                  url: Joi.string().required() 
                 }); 
-            const result = deploymentSchema.validate({url, name, versions}); 
+            const result = deploymentSchema.validate({template, versions, url}); 
             const { value, error } = result; 
             const valid = error == null; 
             if (!valid) { 
@@ -23,14 +23,17 @@ const addDeployment = async (req: Request, resp: Response) => {
             } else { 
                   const deploymentData = new Deployment({
                         _id: new mongoose.Types.ObjectId(),
-                        url,
-                        name,
-                        versions
+                        template,
+                        versions,
+                        url
                   });
-                  let resultData = await deploymentData.save();
+                  await deploymentData.save();
+                  const deployments = await Deployment.find({}, {
+                        template: 1, versions: 1, url: 1
+                  });
                   return resp.status(resp.statusCode).json({
                         status: resp.statusCode,
-                        data: resultData
+                        data: deployments
                   })
             }      
             
@@ -45,7 +48,9 @@ const addDeployment = async (req: Request, resp: Response) => {
 
 const getDeployments = async (req: Request, resp: Response) => {
       try {
-            const deployments = await Deployment.find({});
+            const deployments = await Deployment.find({}, {
+                  template: 1, versions: 1, url: 1
+            });
             return resp.status(resp.statusCode).json({
                   status: resp?.statusCode,
                   data: deployments
@@ -59,10 +64,15 @@ const getDeployments = async (req: Request, resp: Response) => {
 }
 const deleteDeployments = async (req: Request, resp: Response) => {
       try {
-            await Deployment.findByIdAndDelete(req?.body?.deployment_id);     
+            await Deployment.findByIdAndDelete(req?.body?.deployment_id);
+            const deployments = await Deployment.find({}, {
+                  template: 1, versions: 1, url: 1
+            });     
             return resp.status(resp.statusCode).json({
                   status: resp?.statusCode,
-                  message: "deployment Deleted"
+                  message: "deployment Deleted",
+                  data: deployments
+
             })
       } catch (error) {
             return resp.status(resp.statusCode).json({

@@ -3,7 +3,7 @@ import mongoose, {Schema} from 'mongoose'
 import IDeployment from '../interfaces/deployment.interface'
 
 const DeploymentSchema: Schema = new Schema({
-      name: {
+      template: {
             type: String,
             required: true
       },
