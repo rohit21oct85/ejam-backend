@@ -6,4 +6,4 @@ const router = express.Router();
 router.get('/get/templates/:template_id?', controller.getTemplates);
 router.post('/add/template', controller.addTemplate);
 
-export = router;
+export default router;

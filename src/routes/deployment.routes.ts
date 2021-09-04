@@ -7,4 +7,4 @@ router.get('/get/deployments', controller.getDeployments);
 router.post('/add/deployment', controller.addDeployment);
 router.delete('/delete/deployments', controller.deleteDeployments);
 
-export = router;
+export default router;
