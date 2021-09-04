@@ -46,6 +46,9 @@
     "node": "14.17.5",
     "npm": "6.14.14"
   },
+  "compilerOptions" : {
+    
+  },
   "bugs": {
     "url": "https://github.com/rohit21oct85/ejam-backend/issues"
   },

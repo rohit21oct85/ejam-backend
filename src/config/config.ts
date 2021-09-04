@@ -7,7 +7,8 @@ const MONGO_OPTIONS = {
       useFindAndModify: true,
       useNewUrlParser: true,
       autoIndex: false,
-      retryWrites: false
+      retryWrites: false,
+      esModuleInterop: true
 }
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'ejam-root-user';
