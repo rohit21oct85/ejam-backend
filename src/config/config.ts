@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import * as dotenv from 'dotenv'
 dotenv.config();
 
 const MONGO_OPTIONS = {
@@ -6,8 +6,7 @@ const MONGO_OPTIONS = {
       useFindAndModify: true,
       useNewUrlParser: true,
       autoIndex: false,
-      retryWrites: false,
-      esModuleInterop: true
+      retryWrites: false
 }
 
 const MONGO_USERNAME = process.env.MONGO_USERNAME || 'ejam-root-user';
